@@ -15,14 +15,12 @@ const drums = {};
 const isValidDrum = key => !!drums[key];
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.body.addEventListener("keydown", e => {
+  for( key in sounds )
+    new Drum(key, sounds[key], drums);
 
-    for( key in sounds )
-      new Drum(key, sounds[key], drums);
-
-
+  document.addEventListener("keydown", e => {
     if( isValidDrum( e.keyCode ) ) {
       drums[e.keyCode].play();
     }
-  })
+  });
 });

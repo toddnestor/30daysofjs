@@ -3,6 +3,17 @@ class Drum {
     this.el = document.querySelector(`.drum.key-${key}`);
     this.sound = new Audio(`./sounds/${sound}.wav`);
     drums[key] = this;
+    this.bindTransitionEnd();
+  }
+
+  bindTransitionEnd() {
+    this.el.addEventListener('transitionend', e => this.removeTransition(e));
+  }
+
+  removeTransition(e) {
+    if( e.propertyName == 'transform' ) {
+      this.el.classList.remove('playing');
+    }
   }
 
   play() {
@@ -12,7 +23,6 @@ class Drum {
 
   highlightButton() {
     this.el.classList.add('playing');
-    setTimeout(() => this.el.classList.remove('playing'), 100);
   }
 
   playSound() {
