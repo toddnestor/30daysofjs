@@ -52,7 +52,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(2);
+	__webpack_require__(6);
 	
 	document.addEventListener('DOMContentLoaded', function () {
 	  var clock = new _clock2.default(document.querySelector('.clock'));
@@ -70,15 +70,15 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _hourHand = __webpack_require__(3);
+	var _hourHand = __webpack_require__(2);
 	
 	var _hourHand2 = _interopRequireDefault(_hourHand);
 	
-	var _minuteHand = __webpack_require__(5);
+	var _minuteHand = __webpack_require__(4);
 	
 	var _minuteHand2 = _interopRequireDefault(_minuteHand);
 	
-	var _secondHand = __webpack_require__(6);
+	var _secondHand = __webpack_require__(5);
 	
 	var _secondHand2 = _interopRequireDefault(_secondHand);
 	
@@ -127,12 +127,6 @@
 
 /***/ },
 /* 2 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -143,7 +137,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _hand = __webpack_require__(4);
+	var _hand = __webpack_require__(3);
 	
 	var _hand2 = _interopRequireDefault(_hand);
 	
@@ -179,7 +173,7 @@
 	exports.default = HourHand;
 
 /***/ },
-/* 4 */
+/* 3 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -231,7 +225,7 @@
 	exports.default = Hand;
 
 /***/ },
-/* 5 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -242,7 +236,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _hand = __webpack_require__(4);
+	var _hand = __webpack_require__(3);
 	
 	var _hand2 = _interopRequireDefault(_hand);
 	
@@ -278,7 +272,7 @@
 	exports.default = MinuteHand;
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -289,7 +283,7 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _hand = __webpack_require__(4);
+	var _hand = __webpack_require__(3);
 	
 	var _hand2 = _interopRequireDefault(_hand);
 	
@@ -323,6 +317,12 @@
 	}(_hand2.default);
 	
 	exports.default = SecondHand;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

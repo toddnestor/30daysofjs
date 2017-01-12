@@ -808,7 +808,7 @@ h6 {
   transform: translate(-50%, -50%); }
 
 .clock {
-  border-width: 6px;
+  border-width: 15px;
   border-style: solid;
   border-radius: 50%;
   width: 200px;
@@ -818,7 +818,9 @@ h6 {
     left: 50%;
     top: 50%;
     width: calc(50% - 6px);
-    transform-origin: left; }
+    transform-origin: left;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); }
     .clock .face div.hour-hand {
       width: 33.333%;
       border-width: 3px; }
