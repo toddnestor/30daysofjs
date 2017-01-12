@@ -807,26 +807,39 @@ h6 {
   left: 50%;
   transform: translate(-50%, -50%); }
 
-.clock {
-  border-width: 15px;
-  border-style: solid;
-  border-radius: 50%;
-  width: 200px;
+.hidden {
+  display: none; }
+
+.clocks {
   height: 200px; }
-  .clock .face div {
+  .clocks .clock-container {
+    height: 250px; }
+  .clocks .clock {
+    border-width: 15px;
     border-style: solid;
-    left: 50%;
-    top: 50%;
-    width: calc(50% - 6px);
-    transform-origin: left;
-    transition: 0.5s;
-    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); }
-    .clock .face div.hour-hand {
-      width: 33.333%;
-      border-width: 3px; }
-    .clock .face div.minute-hand {
-      border-width: 4px; }
-    .clock .face div.second-hand {
-      border-width: 2px; }
+    border-radius: 50%;
+    width: 200px;
+    height: 200px; }
+    .clocks .clock .face h3 {
+      position: absolute;
+      font-family: monospace;
+      left: 50%;
+      top: 10%;
+      transform: translateX(-50%); }
+    .clocks .clock .face div {
+      border-style: solid;
+      left: 50%;
+      top: 50%;
+      width: calc(50% - 6px);
+      transform-origin: left;
+      transition: 0.5s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); }
+      .clocks .clock .face div.hour-hand {
+        width: 33.333%;
+        border-width: 4px; }
+      .clocks .clock .face div.minute-hand {
+        border-width: 3px; }
+      .clocks .clock .face div.second-hand {
+        border-width: 2px; }
 
 /*# sourceMappingURL=style.css.map*/

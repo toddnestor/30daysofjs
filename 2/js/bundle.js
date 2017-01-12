@@ -54,8 +54,36 @@
 	
 	__webpack_require__(6);
 	
+	var deepDupElement = function deepDupElement(el) {
+	  var newEl = el.cloneNode();
+	
+	  var children = Array.from(el.children);
+	  children.forEach(function (child) {
+	    return newEl.appendChild(deepDupElement(child));
+	  });
+	
+	  return newEl;
+	};
+	
+	var addClock = function addClock(options) {
+	  var element = deepDupElement(document.querySelector('#clock-template').children[0]);
+	
+	  new _clock2.default(element, options.timezone);
+	
+	  if (options.label) element.querySelector('h3').innerHTML = options.label;
+	
+	  document.querySelector('.clocks').appendChild(element);
+	};
+	
+	window.addClock = addClock;
+	
 	document.addEventListener('DOMContentLoaded', function () {
-	  var clock = new _clock2.default(document.querySelector('.clock'));
+	
+	  var clocks = [{ label: 'Local' }, { label: 'Beijing', timezone: +8 }, { label: 'UTC', timezone: 0 }, { label: 'NYC', timezone: -5 }, { label: 'SLC', timezone: -7 }, { label: 'Kosovo', timezone: +1 }];
+	
+	  clocks.forEach(function (options) {
+	    return addClock(options);
+	  });
 	});
 
 /***/ },
@@ -86,25 +114,37 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
+	var clocks = [];
+	var clockInterval = setInterval(function () {
+	  clocks.forEach(function (clock) {
+	    return clock.update();
+	  });
+	}, 1000);
+	
 	var Clock = function () {
-	  function Clock(el) {
+	  function Clock(el, timezone) {
 	    _classCallCheck(this, Clock);
 	
 	    this.el = el;
+	    this.timezone = timezone;
 	    this.hands = [new _hourHand2.default(this), new _minuteHand2.default(this), new _secondHand2.default(this)];
 	
-	    this.startInterval();
+	    clocks.push(this);
 	  }
 	
 	  _createClass(Clock, [{
-	    key: 'startInterval',
-	    value: function startInterval() {
-	      var _this = this;
-	
-	      this.interval = setInterval(function () {
-	        _this.currentTime = new Date();
-	        _this.updateHands();
-	      }, 1000);
+	    key: 'update',
+	    value: function update() {
+	      this.currentTime = new Date();
+	      this.updateHoursForTimezone();
+	      this.updateHands();
+	    }
+	  }, {
+	    key: 'updateHoursForTimezone',
+	    value: function updateHoursForTimezone() {
+	      if (this.timezone !== undefined) {
+	        this.currentTime.setHours(this.currentTime.getUTCHours() + this.timezone);
+	      }
 	    }
 	  }, {
 	    key: 'time',

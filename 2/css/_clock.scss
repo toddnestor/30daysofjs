@@ -1,34 +1,50 @@
 $clockBorder: 15px;
 
-.clock {
-  border-width: $clockBorder;
-  border-style: solid;
-  border-radius: 50%;
-  width: 200px;
+.clocks {
   height: 200px;
 
-  .face {
+  .clock-container {
+    height: 250px;
+  }
 
-    div {
-      border-style: solid;
-      left: 50%;
-      top: 50%;
-      width: calc(50% - 6px);
-      transform-origin: left;
-      transition: 0.5s;
-      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+  .clock {
+    border-width: $clockBorder;
+    border-style: solid;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
 
-      &.hour-hand {
-        width: 33.333%;
-        border-width: 3px;
+    .face {
+
+      h3 {
+        position: absolute;
+        font-family: monospace;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
       }
 
-      &.minute-hand {
-        border-width: 4px;
-      }
+      div {
+        border-style: solid;
+        left: 50%;
+        top: 50%;
+        width: calc(50% - 6px);
+        transform-origin: left;
+        transition: 0.5s;
+        transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 
-      &.second-hand {
-        border-width: 2px;
+        &.hour-hand {
+          width: 33.333%;
+          border-width: 4px;
+        }
+
+        &.minute-hand {
+          border-width: 3px;
+        }
+
+        &.second-hand {
+          border-width: 2px;
+        }
       }
     }
   }
