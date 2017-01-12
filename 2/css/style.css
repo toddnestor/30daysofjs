@@ -841,5 +841,37 @@ h6 {
         border-width: 3px; }
       .clocks .clock .face div.second-hand {
         border-width: 2px; }
+      .clocks .clock .face div.mark {
+        transition: none;
+        width: 8px;
+        left: 190px;
+        border-width: 3px;
+        transform-origin: -92px 0; }
+        .clocks .clock .face div.mark.twelve {
+          transform: rotate(270deg); }
+        .clocks .clock .face div.mark.six {
+          transform: rotate(90deg); }
+        .clocks .clock .face div.mark.nine {
+          transform: rotate(180deg); }
+        .clocks .clock .face div.mark.small {
+          width: 4px;
+          left: 194px;
+          transform-origin: -94px 0; }
+          .clocks .clock .face div.mark.small.one {
+            transform: rotate(-60deg); }
+          .clocks .clock .face div.mark.small.two {
+            transform: rotate(-30deg); }
+          .clocks .clock .face div.mark.small.four {
+            transform: rotate(30deg); }
+          .clocks .clock .face div.mark.small.five {
+            transform: rotate(60deg); }
+          .clocks .clock .face div.mark.small.seven {
+            transform: rotate(120deg); }
+          .clocks .clock .face div.mark.small.eight {
+            transform: rotate(150deg); }
+          .clocks .clock .face div.mark.small.ten {
+            transform: rotate(210deg); }
+          .clocks .clock .face div.mark.small.eleven {
+            transform: rotate(240deg); }
 
 /*# sourceMappingURL=style.css.map*/

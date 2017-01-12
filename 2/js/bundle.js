@@ -79,7 +79,7 @@
 	
 	document.addEventListener('DOMContentLoaded', function () {
 	
-	  var clocks = [{ label: 'Local' }, { label: 'Beijing', timezone: +8 }, { label: 'UTC', timezone: 0 }, { label: 'NYC', timezone: -5 }, { label: 'SLC', timezone: -7 }, { label: 'Kosovo', timezone: +1 }];
+	  var clocks = [{ label: 'Local' }, { label: 'Samoa', timezone: -11 }, { label: 'SF', timezone: -8 }, { label: 'SLC', timezone: -7 }, { label: 'Guatemala', timezone: -6 }, { label: 'NYC', timezone: -5 }, { label: 'UTC', timezone: 0 }, { label: 'Kosovo', timezone: +1 }, { label: 'Egypt', timezone: +2 }, { label: 'Cambodia', timezone: +7 }, { label: 'Beijing', timezone: +8 }, { label: 'Fiji', timezone: +12 }];
 	
 	  clocks.forEach(function (options) {
 	    return addClock(options);
