@@ -1,0 +1,31 @@
+.clock {
+  border-width: 6px;
+  border-style: solid;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+
+  .face {
+
+    div {
+      border-style: solid;
+      left: 50%;
+      top: 50%;
+      width: calc(50% - 6px);
+      transform-origin: left;
+
+      &.hour-hand {
+        width: 33.333%;
+        border-width: 3px;
+      }
+
+      &.minute-hand {
+        border-width: 4px;
+      }
+
+      &.second-hand {
+        border-width: 2px;
+      }
+    }
+  }
+}
