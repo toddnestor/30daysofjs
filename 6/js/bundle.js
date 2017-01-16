@@ -142,9 +142,13 @@
 	      var cityName = city.city + ', ' + city.state;
 	      var li = this.addItem(cityName);
 	
+	      var regex = new RegExp(this.el.value, 'gi');
+	
 	      var citySpan = document.createElement('span');
 	      citySpan.classList.add('name');
-	      citySpan.innerText = cityName;
+	      citySpan.innerHTML = cityName.replace(regex, function (match) {
+	        return '<span class="hl">' + match + '</span>';
+	      });
 	
 	      var populationSpan = document.createElement('span');
 	      populationSpan.classList.add('population');

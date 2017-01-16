@@ -45,9 +45,11 @@ class Typeahead {
     const cityName = `${city.city}, ${city.state}`;
     const li = this.addItem(cityName);
 
+    const regex = new RegExp(this.el.value, 'gi');
+
     const citySpan = document.createElement('span');
     citySpan.classList.add('name');
-    citySpan.innerText = cityName;
+    citySpan.innerHTML = cityName.replace(regex, match => `<span class="hl">${match}</span>`);
 
     const populationSpan = document.createElement('span');
     populationSpan.classList.add('population');
