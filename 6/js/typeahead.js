@@ -21,7 +21,11 @@ class Typeahead {
 
   listCities(cities) {
     this.clearList();
-    cities.forEach(city => this.addCity(city));
+
+    if( cities.length )
+      cities.forEach(city => this.addCity(city));
+    else
+      this.addItem('No matches...');
   }
 
   showDefault() {

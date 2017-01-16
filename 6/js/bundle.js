@@ -110,9 +110,10 @@
 	      var _this2 = this;
 	
 	      this.clearList();
-	      cities.forEach(function (city) {
+	
+	      if (cities.length) cities.forEach(function (city) {
 	        return _this2.addCity(city);
-	      });
+	      });else this.addItem('No matches...');
 	    }
 	  }, {
 	    key: 'showDefault',
