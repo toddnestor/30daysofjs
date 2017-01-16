@@ -7,13 +7,16 @@ class Panel {
 
   activate(e) {
     if (e.propertyName.includes('flex')) {
-      this.el.classList.toggle('open-active');
+      if( this.el.classList.contains('open') )
+        this.el.classList.add('open-active');
+      else
+        this.el.classList.remove('open-active');
     }
   }
 
   open() {
     this.gallery.panels.forEach( panel => panel == this ? null : panel.close() );
-    this.el.classList.add('open');
+    this.el.classList.toggle('open');
   }
 
   close() {
